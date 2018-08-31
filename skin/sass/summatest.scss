@@ -1,0 +1,134 @@
+$bgBody: #1e1e1e;
+$bgHeader: #0b0b0b;
+$bgMain: #fff;
+$bgFooter: #141414;
+$green: #308E0F;
+$grey1: #f3f3f3;
+$grey2: #e5e5e5;
+$grey3: #cacaca;
+
+.top-container {
+    position: relative;
+    .slider-container {
+        max-height: 350px;
+        overflow-y: hidden;
+
+        &::before {
+            content: '';
+            height: 50px;
+            width: 65px;
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            background-color: $bgMain;
+            border-radius: 0 10px 10px 0;
+        }
+        &::after {
+            content: '';
+            height: 50px;
+            width: 65px;
+            position: absolute;
+            bottom: 50%;
+            right: 0;
+            background: $bgMain;
+            border-radius: 10px 0 0 10px;
+        }
+        .list {
+
+            .item {
+                display: none;
+                &.active {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.main-container {
+    .boxes-block {
+        .box-list {
+            display:inline-flex;
+            .boxing {
+                background: $grey2;
+                padding: 20px;
+                border-top: 7px #ff910f solid;
+                width: 15%;
+                margin: 0 3px;
+                line-height: 20px;
+                min-height: 250px;
+
+                h1 {
+                    margin: 0 0 17px;
+                    font-style: italic;
+                    font-size: 20px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
+
+.header {
+    .header-container {
+        .nav {
+            margin-top: -20px;
+            margin-bottom: 15px;
+
+            .navbar {
+                float: right;
+                list-style: none;
+                display: block;
+                margin: 0;
+
+                .nav-link {
+                    display:inline-block;
+                    position:relative;
+
+                    &.active a {
+                        color: $green 
+                    }
+
+                    & > a {
+                        color: $grey3;
+                        text-decoration: none;
+                        padding: 10px 25px;
+                        font-size: 120%;
+                        font-style: italic;
+
+                        &:hover, &:active, &:focus{
+                            color: $green;
+                        }
+                    }
+                    ul {
+                        display:none;
+                        position: absolute;
+                        top: 17px;
+                        left: -25px;
+                        width: 280px;
+                        z-index: 900;
+                        list-style: none;
+                        background: $bgHeader;
+
+                        & > li {
+                            display:block;
+                            & > a {
+                                text-decoration: none;
+                                display: block;
+                                color: $grey3;
+                                padding: 13px 25px;
+
+                                &:hover {
+                                    background: rgba(255,255,255,0.4);
+                                }
+                            }
+                        }
+                    }
+                    &:hover ul {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
